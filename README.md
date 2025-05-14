@@ -1,3 +1,28 @@
+
+<!-- by 文荣平  -->
+### Quick Setup
+- **Installation Method**: In some Linux distributions, `n2n` is provided as a software package, and you can install it using `sudo apt install n2n`. Additionally, the latest software packages for most distributions can be obtained from [ntop repositories](http://packages.ntop.org/).
+- **Example Configuration**: Here are examples of configuring edge nodes on different hosts:
+
+```sh
+# Run the edge command with sudo privileges to configure an n2n edge node
+# -c specifies the community name as mynetwork
+# -k specifies the encryption key as mysecretpass
+# -a specifies the local IP address as 192.168.100.1
+# -f runs the process in foreground mode
+# -l specifies the supernode to connect to as supernode.ntop.org:7777
+```
+    - Host 1:
+```sh
+sudo edge -c mynetwork -k mysecretpass -a 192.168.100.1 -f -l supernode.ntop.org:7777
+```
+    - Host 2:
+```sh
+sudo edge -c mynetwork -k mysecretpass -a 192.168.100.2 -f -l supernode.ntop.org:7777
+```
+
+After the configuration is completed, the two hosts can ping each other. It is highly recommended to choose a custom community name (`-c`) and a secret encryption key (`-k`) to prevent other users from connecting to your computer. To protect data privacy and reduce the server load of `supernode.ntop.org`, it is also recommended to set a custom supernode. 
+
 I. Community and Encryption Key Settings
 1. Custom Community and Key
 To prevent other users from connecting to your computer, it is strongly recommended to select a custom community name (using the -c parameter) and a secure encryption key (using the -k parameter) for each virtual network. Avoid using default or easily guessable community names and keys to ensure the privacy and security of the network.
@@ -38,3 +63,4 @@ Since n2n is open source software, you can review the source code to understand 
 2. Security of Dependent Libraries
 n2n may depend on some external libraries, such as OpenSSL. Ensure that the versions of these dependent libraries are secure and update the dependent libraries with security vulnerabilities in a timely manner.
 By following the above security precautions, you can improve the security of the n2n virtual network and protect the privacy of data transmission and network communication.
+
