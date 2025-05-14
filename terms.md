@@ -1,58 +1,11 @@
-
-# 术语词汇表
-
-以下是一些常用术语及其定义，以帮助您更好地理解相关文档和讨论。
-
-## FAQ
-**Frequently Asked Questions** 的缩写，指常见问题解答。
-
-## CLI
-**Command Line Interface** 的缩写，指命令行界面，是一种通过文本命令与计算机程序交互的用户界面。
-
-## GUI
-**Graphical User Interface** 的缩写，指图形用户界面，是一种通过图形图标和菜单与计算机程序交互的用户界面。
-
-## Docker
-一种开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。
-
-## Kubernetes
-一个开源的容器编排系统，用于自动化部署、扩展和管理容器化应用程序。
-
-## Helm
-Kubernetes 的包管理工具，它帮助您定义、安装和升级 Kubernetes 应用程序。
-
-## n2n
-一种点对点（P2P）虚拟专用网络（VPN）解决方案，允许用户创建一个安全的网络，使远程计算机可以相互通信，就像它们在同一局域网中一样。
-
-## Pull Request
-在版本控制系统中，特别是在使用 Git 的系统中，一个用户向另一个用户或团队的代码库提交更改的请求。
-
-## Supernode
-在网络中，超级节点是一种特殊的节点，它充当其他节点之间的中介，帮助它们相互通信。
-
-## Edge
-在网络术语中，边缘节点是指网络的外围部分，通常是指连接到网络的最终用户设备。
-
-## Lucktu
-一个为 Windows 提供的 n2n 预编译二进制文件集合。
-
-## Hin2n
-为 Android 设备提供的 n2n 客户端。
-
-## HappyNet
-一个为 Windows 提供的 GUI，支持 n2n 网络的配置和管理。
-
-N2N	N2N:一款轻量级 VPN 软件，可创建虚拟网络，绕过防火墙限制
-VPN（Virtual Private Network）	虚拟专用网络:可在公共网络上建立加密通道，实现安全通信
-supernode	超级节点:作为网络枢纽，负责边缘节点的注册与发现，支持多社区并发中继
-edge node	边缘节点:虚拟网络的终端节点，支持多平台部署，具备数据加密功能
-virtual network	虚拟网络:通过软件技术构建的网络，可实现设备间的互联
-firewall	防火墙:用于网络安全防护，限制网络访问的设备或软件
-community	社区:N2N 中以虚拟网络划分的单位，每个社区有独立网络空间和加密密钥
-NAT（Network Address Translation）	网络地址转换:用于在不同网络间转换地址，N2N 中直连时会用到 NAT 穿透技术
-UDP（User Datagram Protocol）	用户数据报协议:一种无连接的传输层协议，N2N 中用于节点间数据传输
-AES - 256（Advanced Encryption Standard - 256）	高级加密标准 - 256:一种数据加密算法，N2N 中用于社区级数据加密
-identity authentication	身份认证:用于确认用户或设备身份的过程，保障网络安全
-data packet verification	数据包校验:检查数据包的完整性，防止数据传输过程中被篡改
-key rotation	密钥轮换:定期更换加密密钥，增强数据安全性
-
+<！-- by 黄朝淼 -->
+ 超级节点（Supernode）：在网络中具有特殊功能和地位的节点，通常承担着数据转发、网络管理等重要任务，可用于构建特定的网络架构。英文解释：A node in a network that has special functions and status, usually undertaking important tasks such as data forwarding and network management, and can be used to build a specific network architecture.
+n2n：一种虚拟专用网络（VPN）技术，允许用户创建自己的私有网络，实现不同设备之间的安全通信。英文解释：A virtual private network (VPN) technology that allows users to create their own private network to achieve secure communication between different devices.
+配置文件（Configuration File）：包含软件或系统配置信息的文件，用于指定各种参数和设置，以控制软件或系统的行为。英文解释：A file that contains the configuration information of software or a system, used to specify various parameters and settings to control the behavior of the software or system.
+端口（Port）：计算机与外部设备或其他计算机进行通信的接口，每个端口都有一个唯一的编号，用于区分不同的通信通道。英文解释：An interface through which a computer communicates with external devices or other computers. Each port has a unique number used to distinguish different communication channels.
+源码编译（Source Code Compilation）：将人类可读的源代码转换为计算机可执行的机器代码的过程，需要使用编译器等工具。英文解释：The process of converting human - readable source code into machine - code that can be executed by a computer, which requires the use of tools such as compilers.
+边缘节点（Edge Node）：位于网络边缘的节点，通常与终端设备或用户直接连接，用于接收和发送数据。英文解释：A node located at the edge of a network, usually directly connected to terminal devices or users, used to receive and send data.
+虚拟接口（Virtual Interface）：在计算机系统中模拟出来的网络接口，并非实际的物理接口，用于实现特定的网络功能或连接到虚拟网络。英文解释：A network interface simulated in a computer system, not an actual physical interface, used to implement specific network functions or connect to a virtual network.
+社区名称（Community Name）：在特定的网络环境中，用于标识一组相关设备或用户的名称，通常用于区分不同的网络区域或用户群体。英文解释：In a specific network environment, a name used to identify a group of related devices or users, usually used to distinguish different network areas or user groups.
+加密密钥（Encryption Key）：用于对数据进行加密和解密的字符串或数字，确保数据在传输和存储过程中的安全性。英文解释：A string or number used to encrypt and decrypt data, ensuring the security of data during transmission and storage.
+自启（Auto - start）：指计算机程序或服务在操作系统启动时自动运行的功能，无需用户手动启动。英文解释：Refers to the function that a computer program or service automatically runs when the operating system starts, without the need for manual user startup.
