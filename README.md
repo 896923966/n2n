@@ -1,6 +1,23 @@
+<--  by 唐崟 -->
 
+## Introduction to N2N Lightweight VPN
+N2N is a lightweight VPN software that can bypass the restrictions of intermediate firewalls and easily create virtual networks. It is applicable to various scenarios such as enterprise network establishment and remote work.
+## Core Components
+1.Supernode: Serving as the network hub, it is responsible for the registration and discovery of edge nodes. It requires a publicly accessible port on the public network and supports concurrent relay of multiple communities.
+2.Edge Node: As the terminal node of the virtual network, it supports multi-platform deployment. A single device can simultaneously join multiple communities and has the AES-256 data encryption function.
+## Virtual Community Mechanism
+N2N divides virtual networks through "communities". Each community has an independent network space and encryption key, and supports custom identification. A single supernode can manage hundreds of communities and achieve dynamic connection of members.
+## Intelligent Connection Strategy
+1.-UDP Direct Connection: Based on NAT traversal technology, it features zero latency and high bandwidth.
+2.-Supernode Relay: Achieves reliable UDP transmission and automatically optimizes the connection.
+3.-Hybrid Mode: Dynamically switches connections to ensure transmission stability.
+## Security Protection
+It provides multi-level security protection such as community-level AES-256 encryption, identity authentication, and data packet verification, and also supports regular key rotation.
 ## Manual Compilation Instruction Document
+<--  by 唐崟 -->
 
+
+<-- by 谢思源 -->
 ## 1. Document Overview
 This is an instruction document on manual compilation. It mainly covers the steps for compiling from source code under the Linux system, and also mentions relevant information about Windows and MacOS systems, version-selection suggestions, and thanks for user feedback.
 ## 2. Compilation Steps in the Linux System
@@ -21,10 +38,17 @@ The current dev branch is mainly used for developing and testing the latest, yet
 However, if users are brave enough to try out the latest features and are willing to take the risk of potential instability, the document also encourages users to start compiling from the dev branch. It should be noted, though, that since the code in the dev branch is updated frequently, users need to closely track the rapid changes in the code and promptly understand and adapt to these changes to ensure a smooth compilation process.
 ## 5. User Feedback
 Finally, the document expresses gratitude to users who provide feedback in the Issues section. User feedback is crucial for the continuous improvement and optimization of the project. By collecting and analyzing feedback information such as the problems encountered and suggestions put forward by users during use, the project development team can better identify the deficiencies in the software, promptly fix bugs, optimize functions, and thus continuously enhance the quality and user experience of the software.
-<!-- by 谢思源 -->
+<-- by 谢思源 -->
+
+
+
 =======
 
-# <！-- by 黄朝淼 -->🇬🇧 English Version README.md
+
+
+
+<-- by 黄朝淼 -->
+🇬🇧 English Version README.md
 # Set Up a Custom Supernode
 ## Overview
 This guide will provide a detailed introduction on how to set up a custom supernode, and it will also cover relevant code explanations. By setting up a custom supernode, you can create your own n2n network infrastructure, enhancing network security and privacy.
@@ -123,8 +147,12 @@ sudo edge -d tun0 -l your_supernode_ip:1234 -c mycommunity -k mysecretkey -a 192
 -a: Assigned virtual IP address
 -f: Run in the foreground (for debugging purposes)
 =======
+<-- by 黄朝淼 -->
 
-<!-- by 文荣平  -->
+
+---
+
+<-- by 文荣平  -->
 ### Quick Setup
 - **Installation Method**: In some Linux distributions, `n2n` is provided as a software package, and you can install it using `sudo apt install n2n`. Additionally, the latest software packages for most distributions can be obtained from [ntop repositories](http://packages.ntop.org/).
 - **Example Configuration**: Here are examples of configuring edge nodes on different hosts:
@@ -147,7 +175,14 @@ sudo edge -c mynetwork -k mysecretpass -a 192.168.100.2 -f -l supernode.ntop.org
 ```
 
 After the configuration is completed, the two hosts can ping each other. It is highly recommended to choose a custom community name (`-c`) and a secret encryption key (`-k`) to prevent other users from connecting to your computer. To protect data privacy and reduce the server load of `supernode.ntop.org`, it is also recommended to set a custom supernode. 
+<-- by 文荣平  -->
 
+
+
+---
+
+
+ <-- by 陈思良 -->
 I. Community and Encryption Key Settings
 1. Custom Community and Key
 To prevent other users from connecting to your computer, it is strongly recommended to select a custom community name (using the -c parameter) and a secure encryption key (using the -k parameter) for each virtual network. Avoid using default or easily guessable community names and keys to ensure the privacy and security of the network.
@@ -188,5 +223,44 @@ Since n2n is open source software, you can review the source code to understand 
 2. Security of Dependent Libraries
 n2n may depend on some external libraries, such as OpenSSL. Ensure that the versions of these dependent libraries are secure and update the dependent libraries with security vulnerabilities in a timely manner.
 By following the above security precautions, you can improve the security of the n2n virtual network and protect the privacy of data transmission and network communication.
+ <-- by 陈思良 -->
 
 
+---
+
+
+<-------by 刘琳锋-------->
+## Advanced Configuration
+
+More information about communities, support for multiple supernodes, routing, traffic restrictions and on how to run an edge as 
+a service is available in the [more detailed documentation](doc/Advanced.md).
+
+
+## Contribution
+
+You can contribute to n2n in various ways:
+
+- Update an [open issue](https://github.com/ntop/n2n/issues) or create a new one with detailed information
+- Propose new features
+- Improve the documentation
+- Provide pull requests with enhancements
+
+For details about the internals of n2n check out the [Hacking guide](https://github.com/ntop/n2n/blob/dev/doc/Hacking.md).
+
+
+## Further Readings and Related Projects
+
+Answers to frequently asked questions can be found in our [FAQ document](https://github.com/ntop/n2n/blob/dev/doc/Faq.md).
+
+Here is a list of third-party projects connected to this repository:
+
+- Collection of pre-built binaries for Windows: [lucktu](https://github.com/lucktu/n2n)
+- n2n for Android: [hin2n](https://github.com/switch-iot/hin2n)
+- Docker images: [Docker Hub](https://hub.docker.com/r/supermock/supernode/)
+- Go bindings, management daemons and CLIs for n2n edges and supernodes, Docker, Kubernetes & Helm Charts: [pojntfx/gon2n](https://pojntfx.github.io/gon2n/)
+- Windows GUI (along with a custom version of n2n) but also working with regular n2n: [HappyNet](https://github.com/happynclient/happynwindows)
+
+---
+
+(C) 2007-22 - ntop.org and contributors
+<-------by 刘琳锋-------->
